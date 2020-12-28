@@ -39,14 +39,31 @@
 		
 	    /*<![CDATA[*/
 
+	    	
+	    	let lat = [[${location.lat}]];
+	    	let lng = [[${location.lng}]];
+
+	    	let ct = [[${location.city}]];
+	    	let st = [[${location.state}]];
+	    	
+	    	console.log("lat: " + lat);
+	    	console.log("lng: " + lng);
+	    	console.log("ct: " + ct);
+	    	console.log("st: " + st);
+	    	
 		
 			let coords = {
-					lat: parseFloat(/*[[${location.lat}]]*/) || 39.9612,
-					lng: parseFloat(/*[[${location.lng}]]*/) || -82.9988,
+// 					lat: parseFloat(/*[[${location.lat}]]*/) || 39.9612,
+// 					lng: parseFloat(/*[[${location.lng}]]*/) || -82.9988,
+					lat: parseFloat(lat) || 39.9612,
+					lng: parseFloat(lng) || -82.9988,					
 			};
 			
-			let city = /*[[${location.city}]]*/ null;
-			let state = /*[[${location.state}]]*/ null;
+// 			let city = /*[[${location.city}]]*/ null;
+// 			let state = /*[[${location.state}]]*/ null;
+
+			let city = ct;
+			let state = st;			
 			
 			
 		    /*]]>*/
@@ -57,7 +74,10 @@
 	
 			<script src="/custom.js"></script>
 			<script th:src="@{${'https://maps.googleapis.com/maps/api/js?key=' + 
-			@environment.getProperty('api_key') + '&callback=initMap'}}" async defer>
+			@environment.getProperty('api_key') + '&callback=initMap'}}" async defer>			
+//  			<script th:src="@{${'https://maps.googleapis.com/maps/api/js?key=AIzaSyCTWAOF_H060Hi9GKYHvRApqrWPrOCjGI0' +
+// 		'&callback=initMap'}}" async defer>
+			
 			</script>
 			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 	</body>

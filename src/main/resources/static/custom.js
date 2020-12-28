@@ -7,11 +7,11 @@ function initMap() {
 		center: coords,
 		zoom: 10,
 	});
-	
+
 	let image = {
-	url: "/cheems.png",
-	scaledSize: new google.maps.Size(50,50)
-};
+		url: "/building.png",
+		scaledSize: new google.maps.Size(50, 50)
+	};
 
 
 	let marker = new google.maps.Marker({
@@ -20,14 +20,14 @@ function initMap() {
 		icon: image,
 		animation: google.maps.Animation.BOUNCE,
 	});
-	
+
 	let contentString = '<h2>' + city + ', ' + state + '</h2>';
-	
+
 	let infowindow = new google.maps.InfoWindow({
 		content: contentString,
-	}); 
-	
+	});
+
 	google.maps.event.addListener(marker, 'click', function() {
-		infowindow.open(map,marker); 
+		infowindow.open(map, marker);
 	});
 }

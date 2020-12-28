@@ -14,7 +14,10 @@ public class MapService {
 	private String apiKey;
 	
 	
-	public void addCoordinates(Location location) {
+	public Location addCoordinates(Location location) {
+		
+		System.out.println("api_key: " + apiKey);
+		
 		String url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + 
 			    location.getCity() + "," + location.getState() + "&key=" + apiKey;
 		
@@ -25,6 +28,8 @@ public class MapService {
 		
 		location.setLat(coordinates.getLat());
 		location.setLng(coordinates.getLng()); 
+		
+		return location;
 	}
 	
 	
