@@ -18,8 +18,14 @@ public class MapService {
 		
 		System.out.println("api_key: " + apiKey);
 		
+		
+		
 		String url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + 
 			    location.getCity() + "," + location.getState() + "&key=" + apiKey;
+		
+		// Example https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&sensor=false&key=AIzaSyCTWAOF_H060Hi9GKYHvRApqrWPrOCjGI0
+		// Example https://maps.googleapis.com/maps/api/geocode/json?address=Puebla,Mexico&key=AIzaSyCTWAOF_H060Hi9GKYHvRApqrWPrOCjGI0
+		System.out.println("url: " + url);
 		
 		
 		RestTemplate restTemplate = new RestTemplate();
@@ -28,6 +34,9 @@ public class MapService {
 		
 		location.setLat(coordinates.getLat());
 		location.setLng(coordinates.getLng()); 
+		
+		System.out.println("lat result: " + coordinates.getLat());
+		System.out.println("long result: " + coordinates.getLng());
 		
 		return location;
 	}
