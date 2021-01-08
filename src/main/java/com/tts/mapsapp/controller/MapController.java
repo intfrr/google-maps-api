@@ -45,9 +45,19 @@ public class MapController {
 		location.setCity("Puebla");
 		location.setState("Mexico");
 
+		location.setStreet_number(1600);
+		location.setRoute("Amphitheatre+Parkway");
+		location.setLocality("Mountain+View");
+		location.setAdministrative_area_level_2("Santa Clara County");
+		location.setAdministrative_area_level_1("California");
+		location.setCountry("United States");
+		location.setPostal_code(94043);
+		
 		System.out.println("City: " + location.getCity()); 
 		System.out.println("State: " + location.getState());
 
+		
+		
 		mapService.addCoordinates(location);
 		
 		System.out.println("Lat: " + location.getLat()); 

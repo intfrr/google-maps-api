@@ -1,41 +1,79 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<title>Maps</title>
-		<link rel="stylesheet" type="text/css" href="/custom.css"/>
-		
-		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<head>
+<title>Maps</title>
+<link rel="stylesheet" type="text/css" href="/custom.css" />
 
-	</head>
-	
-	<body>
-	
-		<div class="container bg-light justify-content-center">
-			<div class="row">
-				<div class="span6" style="float: none; margin: 0 auto;">
-					<br/>
-					<h1 class="text-center">View a Location</h1>
-					<form th:action="@{/home}" th:object=${location} method="post" autocomplete="off" class="form-inline">
-						<div class="form-group">
-							<input type="text" th:field="*{city}" placeholder="City" class="form-control" />		
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	rel="stylesheet">
+
+</head>
+
+<body>
+
+	<div class="container bg-light justify-content-center">
+		<div class="row">
+			<div class="span6" style="float: none; margin: 0 auto;">
+				<br />
+				<h1 class="text-center">View a Location</h1>
+				<form class="forms" th:action="@{/home}" th:object=${location} method="post"
+					autocomplete="off">
+					<div class="form-inline inputs">
+						<div class="form-group inputs-left">
+							<label for="Name">Street number</label> <input type="text"
+								th:field="*{street_number}" placeholder="Street number"
+								class="form-control" />
 						</div>
-						<div class="form-group">
-							<input type="text" th:field="*{state}" placeholder="State" class="form-control" />		
+						<div class="form-group inputs-right">
+							<label for="Name">Street</label> <input type="text"
+								th:field="*{route}" placeholder="Street" class="form-control" />
 						</div>
-						<div class="form-group">
-							<button class="btn btn-md btn-primary btn-block" name="Submit" value="Submit" type="Submit">
-								Update Map
-							</button>
+					</div>
+					<div class="form-inline inputs">
+						<div class="form-group inputs-left">
+							<label for="Name">City</label> <input type="text"
+								th:field="*{locality}" placeholder="City" class="form-control" />
 						</div>
-					</form>
-					<br/>
-				</div>
+						<div class="form-group inputs-right">
+							<label for="Name">County</label> <input type="text"
+								th:field="*{administrative_area_level_2}" placeholder="County"
+								class="form-control" />
+						</div>
+					</div>
+					<div class="form-inline inputs">
+						<div class="form-group inputs-left">
+							<label for="Name">State</label> <input type="text"
+								th:field="*{administrative_area_level_1}" placeholder="State"
+								class="form-control" />
+						</div>
+						<div class="form-group inputs-right">
+							<label for="Name">Country</label> <input type="text"
+								th:field="*{country}" placeholder="Country" class="form-control" />
+						</div>
+					</div>
+					<div class="form-inline inputs">
+						<div class="form-group inputs-left">
+							<label for="Name">Postal Code</label> <input type="text"
+								th:field="*{postal_code}" placeholder="Postal Code"
+								class="form-control" />
+						</div>
+					</div>
+					<div class="form-inline inputs">
+						<div class="form-group inputs-left">
+							<button class="btn btn-md btn-primary btn-block" name="Submit"
+								value="Submit" type="Submit">Update Map</button>
+						</div>
+					</div>
+				</form>
+				<br />
 			</div>
 		</div>
-	
-		<div id="map"></div>
-	
-		<script th:inline="javascript">
+	</div>
+
+	<div id="map"></div>
+
+	<script th:inline="javascript">
 		
 	    /*<![CDATA[*/
 
@@ -43,7 +81,7 @@
 	    	let lat = [[${location.lat}]];
 	    	let lng = [[${location.lng}]];
 
-	    	let ct = [[${location.city}]];
+	    	let ct = [[${location.locality}]];
 	    	let st = [[${location.state}]];
 	    	
 	    	console.log("lat: " + lat);
@@ -66,14 +104,17 @@
 
 		
 		</script>
-	
-			<script src="/custom.js"></script>
-			<script th:src="@{${'https://maps.googleapis.com/maps/api/js?key=' + 
-			@environment.getProperty('api_key') + '&callback=initMap'}}" async defer>			
+
+	<script src="/custom.js"></script>
+	<script
+		th:src="@{${'https://maps.googleapis.com/maps/api/js?key=' + 
+			@environment.getProperty('api_key') + '&callback=initMap'}}"
+		async defer>			
 //  			<script th:src="@{${'https://maps.googleapis.com/maps/api/js?key=AIzaSyCTWAOF_H060Hi9GKYHvRApqrWPrOCjGI0' +
 // 		'&callback=initMap'}}" async defer>
 			
 			</script>
-			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-	</body>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

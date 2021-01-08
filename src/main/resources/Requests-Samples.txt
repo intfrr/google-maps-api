@@ -1,9 +1,12 @@
 Overview  |  Geocoding API  |  Google Developers
 https://developers.google.com/maps/documentation/geocoding/overview?authuser=3
 
-https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,
-+Mountain+View,+CA&key=AIzaSyCTWAOF_H060Hi9GKYHvRApqrWPrOCjGI0
+https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyCTWAOF_H060Hi9GKYHvRApqrWPrOCjGI0
 
+https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,Mountain View,CA&components=postal_code:94043|country:US&key=AIzaSyCTWAOF_H060Hi9GKYHvRApqrWPrOCjGI0
+
+
+https://maps.googleapis.com/maps/api/geocode/json?address=1600 Amphitheatre Parkway, Mountain View,CA&key=AIzaSyCTWAOF_H060Hi9GKYHvRApqrWPrOCjGI0
 {
    "results" : [
       {
@@ -14,7 +17,7 @@ https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Park
                "types" : [ "street_number" ]
             },
             {
-               "long_name" : "Amphitheatre Pkwy",
+               "long_name" : "Amphitheatre Parkway",
                "short_name" : "Amphitheatre Pkwy",
                "types" : [ "route" ]
             },
