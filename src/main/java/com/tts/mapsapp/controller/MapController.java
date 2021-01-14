@@ -36,7 +36,6 @@ public class MapController {
 		
 		model.addAttribute(location);
 		
-//		model.addAttribute(new Location());
 		return "index.html";
 	}
 	
@@ -66,7 +65,6 @@ public class MapController {
 
 		model.put("location", location);
 		
-//		model.addAttribute(new Location());
 		return new ModelAndView("index.html");
 	}	
 
@@ -89,7 +87,7 @@ public class MapController {
 
 		model.put("autocompletelocation", autocompleteLocation);
 		
-//		model.addAttribute(new autoCompleteLocation());
+
 		return new ModelAndView("indexAutocomplete.html");
 	}
 	

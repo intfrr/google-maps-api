@@ -153,13 +153,7 @@ public class MapService {
 			autocompleteLocation.setLat(coordinates.getLat());
 			autocompleteLocation.setLng(coordinates.getLng());
 		}
-		
-		
-
-		
-		System.out.println("lat result: " + coordinates.getLat());
-		System.out.println("long result: " + coordinates.getLng());		
-		
+				
 		return autocompleteLocation;
 	}
 
