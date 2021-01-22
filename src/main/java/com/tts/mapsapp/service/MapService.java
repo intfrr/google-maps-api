@@ -1,9 +1,21 @@
 package com.tts.mapsapp.service;
 
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.maps.FindPlaceFromTextRequest;
+import com.google.maps.GeoApiContext;
+import com.google.maps.GeocodingApi;
+import com.google.maps.PlacesApi;
+import com.google.maps.errors.ApiException;
+import com.google.maps.model.FindPlaceFromText;
+import com.google.maps.model.GeocodingResult;
+import com.google.maps.model.PlacesSearchResult;
 import com.tts.mapsapp.model.AutocompleteLocation;
 import com.tts.mapsapp.model.GeocodingResponse;
 import com.tts.mapsapp.model.Location;
@@ -105,6 +117,54 @@ public class MapService {
 		
 		RestTemplate restTemplate = new RestTemplate();
 		GeocodingResponse response = restTemplate.getForObject(urlComplete, GeocodingResponse.class);
+		
+		
+		GeoApiContext context = new GeoApiContext.Builder()
+		    .apiKey(apiKey)
+		    .build();
+		
+		try {
+			GeocodingResult[] results  = GeocodingApi.geocode(context, "1600 Amphitheatre Parkway Mountain View, CA 94043").await();
+			Gson gson = new GsonBuilder().setPrettyPrinting().create();
+			System.out.println("Gson: " + gson.toJson(results[0].addressComponents));
+
+		} catch (ApiException | InterruptedException | IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		
+		
+		try {
+			FindPlaceFromText responseCandidates = PlacesApi.findPlaceFromText(context, "Tonala 261 Roma", FindPlaceFromTextRequest.InputType.TEXT_QUERY)
+			    .fields(
+			        FindPlaceFromTextRequest.FieldMask.BUSINESS_STATUS,
+			        FindPlaceFromTextRequest.FieldMask.PHOTOS,
+			        FindPlaceFromTextRequest.FieldMask.FORMATTED_ADDRESS,
+			        FindPlaceFromTextRequest.FieldMask.NAME,
+			        FindPlaceFromTextRequest.FieldMask.RATING,
+			        FindPlaceFromTextRequest.FieldMask.OPENING_HOURS,
+			        FindPlaceFromTextRequest.FieldMask.GEOMETRY)
+			    .await();
+			
+			PlacesSearchResult candidate = responseCandidates.candidates[0];
+			
+			System.out.println("responseCandidates: " + responseCandidates);	
+			System.out.println("candidate: " + candidate);
+			
+		} catch (ApiException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+
+		
 		
 		Location coordinates = new Location();
 		
