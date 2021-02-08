@@ -1,0 +1,33 @@
+https://maps.googleapis.com/maps/api/geocode/json?address=39+Cedro 39,Puebla,,Puebla,&components=country:|postal_code:null&key=AIzaSyCTWAOF_H060Hi9GKYHvRApqrWPrOCjGI0
+
+
+
+https://maps.googleapis.com/maps/api/geocode/json?address=39+Cedro 39,Puebla,Puebla&key=AIzaSyCTWAOF_H060Hi9GKYHvRApqrWPrOCjGI0
+
+
+
+https://maps.googleapis.com/maps/api/geocode/json?address=Cedro+39,+Puebla,+Puebla&components=country:%7Cpostal_code:null&key=AIzaSyCTWAOF_H060Hi9GKYHvRApqrWPrOCjGI0
+
+
+https://maps.googleapis.com/maps/api/geocode/json?address=Cedro+39,+Puebla&components=country:%7Cpostal_code:null&key=AIzaSyCTWAOF_H060Hi9GKYHvRApqrWPrOCjGI0
+
+
+
+
+https://maps.googleapis.com/maps/api/geocode/json?address=39+Cedro,Puebla,Puebla,Puebla,&components=country:Mexico|postal_code:72229&key=AIzaSyCTWAOF_H060Hi9GKYHvRApqrWPrOCjGI0
+
+
+https://maps.googleapis.com/maps/api/geocode/json?address=39+Cedro,Puebla,Puebla,Puebla&components=country:Mexico|postal_code:72229&key=AIzaSyCTWAOF_H060Hi9GKYHvRApqrWPrOCjGI0
+
+
+https://maps.googleapis.com/maps/api/geocode/json?address=39+Cedro,Puebla,Puebla&components=country:Mexico|postal_code:72229&key=AIzaSyCTWAOF_H060Hi9GKYHvRApqrWPrOCjGI0
+
+
+
+
+https://maps.googleapis.com/maps/api/geocode/json?address=
+16 de Sept 19,Tepeaca,Puebla&components=country:Mexico|postal_code:75215&key=AIzaSyCTWAOF_H060Hi9GKYHvRApqrWPrOCjGI0
+
+
+
+https://maps.googleapis.com/maps/api/geocode/json?address=19+16 de Septiembre,Tepeaca,Puebla,&key=AIzaSyCTWAOF_H060Hi9GKYHvRApqrWPrOCjGI0
