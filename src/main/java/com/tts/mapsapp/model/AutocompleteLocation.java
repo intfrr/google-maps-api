@@ -35,6 +35,8 @@ public class AutocompleteLocation {
 	//CP
 	private String postal_code;
 	
+	private String complete_address;
+	
 	public AutocompleteLocation() {
 		
 		this.routeAndStreetNumber = "";
